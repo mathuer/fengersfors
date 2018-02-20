@@ -473,7 +473,7 @@ strong a {
 
 #header {
   > .container {
-    padding: 0;
+    padding: 20px 0px;
     > nav {
       border: none;
       box-shadow: none;
@@ -491,9 +491,9 @@ strong a {
       img {
         vertical-align: middle;
         display: inline-block;
-        height: 40px;
+        height: 50px;
         @media(min-width:768px){
-	        height: 60px;
+	        height: 70px;
         }
       }
     }
@@ -833,14 +833,22 @@ strong a {
 		position:relative;
 		width: 100%;
 		border: 1px solid #ccc;
+		border-left:2px solid #ccc;
 	}
 	.list-item{
     position: absolute;
-    border: 1px solid white;
-    border-radius: 50%;
     padding: 10px;
 	}
+}
 
+.open-pop{
+	padding: 10px;
+	border: 1px solid white;
+	@include border-radius(100%);
+		&:hover{
+		padding: 10px;
+		border: 5px solid white;
+		}
 }
 
 
@@ -864,6 +872,15 @@ padding: 35px;
 }
 
 
+.stores {
+    display: none;
+}
+
+.stores .popup{
+    display: block;
+	border: 1px solid white;
+	padding-top: 2px;
+}
 /* --------------------------------------------------------------------------------------------- */
 /* Subpage */
 /* --------------------------------------------------------------------------------------------- */
@@ -2040,3 +2057,11 @@ pagination > .active > a, .pagination > .active > span, .pagination > .active > 
 	width: 19px;
 	height: 20px;
 }
+
+.ui-btn.my-tooltip-btn,
+.ui-btn.my-tooltip-btn:hover,
+.ui-btn.my-tooltip-btn:active {
+    background: none;
+    border: 1px solid black;
+}
+
