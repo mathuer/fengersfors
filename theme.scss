@@ -4,9 +4,9 @@
 /* --------------------------------------------------------------------------------------------- */
 
 /* Colors */
-$primary-color: #80cd4b;
+$primary-color: #333;
 $secondary-color: #3498db;
-$footer-color: #333;
+$footer-color: #fff;
 $text-color: #333;
 $title-color: #333;
 $link-color: #333;
@@ -250,6 +250,58 @@ strong a {
 	    color: #fff;
     }
 }
+
+.form button {
+	background-color: $primary-color;
+	background-image: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin: 2px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border: none;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-shadow: none;
+    @include border-radius(3px);
+    @include transition(all 0.5s ease);
+    &:hover {
+	    background: darken( $primary-color, 10% );
+	    color: #fff;
+    }
+}
+
+.btn-style {
+	background-color: $primary-color;
+	background-image: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin: 2px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border: none;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-shadow: none;
+    @include border-radius(3px);
+    @include transition(all 0.5s ease);
+    &:hover {
+	    background: darken( $primary-color, 10% );
+	    color: #fff;
+    }
+	a{color:#fff;}
+}
+
 
 /* --------------------------------------------------------------------------------------------- */
 /* Margin and padding */
@@ -815,6 +867,7 @@ strong a {
 	overflow: hidden;
 	height: 50vh;
 	position: relative;
+	margin-bottom: 40px;
 	@media(min-width:768px){
 		height: auto;
 	}
@@ -833,57 +886,103 @@ strong a {
 		position:relative;
 		width: 100%;
 		border: 1px solid #ccc;
-		border-left:2px solid #ccc;
+
 	}
 	.list-item{
-    position: absolute;
-    padding: 10px;
+		position: absolute;
+		padding: 10px;
+		display: none;
+		@media(min-width:1080px){
+			display: block;
+		}
+		#open-pop {
+			padding: 5px;
+			border: 2px solid white;
+			background-color: transparent;
+			@include border-radius(100%);
+			margin-bottom: 5px;
+			&:hover{
+				padding: 7px;
+				border: 2px solid grey;
+			}
+		}
+		#close-pop {
+			padding: 5px;
+			border: 1px solid white;
+			background-color: transparent;
+			@include border-radius(100%);
+			&:hover{
+				color: grey;
+			}
+		}
+		
+		.stores {
+			background: white;
+			padding: 4px 4px;
+
+			span {
+				padding-right: 10px;
+				font-size: 15px; 
+			}
+			.fa{
+				padding: 3px;	
+				&:hover{
+					color: grey;
+				}
+			}
+		}
 	}
 }
 
-.open-pop{
-	padding: 10px;
-	border: 1px solid white;
-	@include border-radius(100%);
-		&:hover{
-		padding: 10px;
-		border: 5px solid white;
-		}
-}
 
 
 .start-info{
-	margin: 200px;
+	margin: 50px 0px;
+	@media(min-width:992px){
+	margin:70px 0px;
+	}
 }
 
-.store-info {
-border: 1px solid #ccc;
-margin-top: 50px;
-}
-.store-info .list-item{
-display: inline-block;
-padding: 35px;
-}
-.store-info p{
-	display: inline-block;
-	border: 1px solid #ccc;
-	width: 45%;
-	padding: 30px 30px;
-}
-
-
-.stores {
-    display: none;
-}
-
-.stores .popup{
-    display: block;
-	border: 1px solid white;
-	padding-top: 2px;
-}
 /* --------------------------------------------------------------------------------------------- */
 /* Subpage */
 /* --------------------------------------------------------------------------------------------- */
+.store-info{
+	padding: 20px 10px;
+	h3{
+		margin: 20px 0 20px 0;
+	}
+	.store-image{
+		height: 400px;
+		width: 550px;
+		@media(min-width:992px){
+			overflow: hidden;
+			height: 400px;
+			width: 450px;	
+		}
+		@media(min-width:1200px){
+			height: 400px;
+			width: 550px;	
+		}
+		img{
+			min-height: 100%;
+		  min-width: 100%;
+		  width: auto;
+		  height: auto;
+		  max-width: none;
+		  max-height: none;
+		  display: block;
+		  position: relative;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.store-main-image{
+	width:100%;
+}
+
 
 
 /* --------------------------------------------------------------------------------------------- */
@@ -894,18 +993,20 @@ padding: 35px;
 	padding: 10px 0 0 0;
 	text-align: center;
 	background-color: $footer-color;
+	border-top: 1px solid #ccc;
 	@media(min-width:768px){
-		padding: 10px 0;		
+		padding: 10px 0;	
+		margin-top: 40px;
 	}
 	.col-sm-3, .col-sm-4, .col-sm-6 {
 		margin-bottom: 50px;
 		position: relative;
 	}
 	h2, h3, h4, h5, p, li {
-		color: #fff;
+		color: #333;
 	}
 	a {
-		color: #fff;
+		color: #333;
 	}
 	p {
 		margin-bottom: 0;

@@ -1,18 +1,28 @@
 Bliss.Theme = function() {
 };
 
-Bliss.Theme.HandlePopup = function() {
-	$( ".open-pop" ).click(function() {
-		$( ".stores" ).slideToggle( "slow" );	
+	Bliss.Theme.HandleColumnTransform = function(){
+	if( !$("#content-wrapper .page").length ){
+		return;
+	}
+	
+	$(".column-transform").each(function(){
+		var column = $(this);
+		var class_list = $(this).attr("class").split(" ");
+
+		column_class = class_list[class_list.length-1];
+		
+		var split = column_class.split("-");
+		var col_size = split[split.length-1];
+		
+					
+		column.removeClass( column_class );
+		column.addClass( "col-md-" + col_size);
+
 
 	});
-	$( ".close-pop" ).click(function() {
-		$( ".stores" ).slideToggle( "slow" );	
-
-	});
-};
-				  
+}		  
 // Create an instace of your function.
 $(function($) {
-	Bliss.Theme.HandlePopup();
+Bliss.Theme.HandleColumnTransform();
 } );
